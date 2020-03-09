@@ -33,5 +33,5 @@ all options may be absent. use it only if you know what you do and want to get s
 result. if the option is absent, it will be calculated automatically.  
 
 ### support me
-[![Beerpay](https://beerpay.io/almaceleste/configure-hibernate/badge.svg?style=beer-square)](https://beerpay.io/almaceleste/configure-hibernate) [![Beerpay](https://beerpay.io/almaceleste/configure-hibernate/make-wish.svg?style=flat-square)](https://beerpay.io/almaceleste/configure-hibernate?focus=wish)
+[![Beerpay](https://beerpay.io/almaceleste/configure-hibernate/badge.svg?style=beer)](https://beerpay.io/almaceleste/configure-hibernate) [![Beerpay](https://beerpay.io/almaceleste/configure-hibernate/make-wish.svg?style=flat)](https://beerpay.io/almaceleste/configure-hibernate?focus=wish)
 [![](https://img.shields.io/badge/Paypal-donate_me-blue.svg?longCache=true&logo=paypal)](https://www.paypal.me/almaceleste "paypal | donate me") 
