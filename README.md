@@ -6,6 +6,9 @@ this script configures the system to support hibernate
 
 <!-- #### wiki -->
 
+#### download
+[configure-hibernate.sh](https://github.com/almaceleste/configure-hibernate/raw/master/configure-hibernate.sh)
+
 #### usage:
 ```
 configure-hibernate.sh [options]
