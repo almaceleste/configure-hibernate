@@ -4,7 +4,7 @@
 # GNU Affero GPL 3.0 (ɔ) 2020 almaceleste
 
 readonly scriptname='configure-hibernate'
-readonly version=0.1.0
+readonly version=0.1.1
 
 readonly fstab='/etc/fstab'
 readonly grub='/etc/default/grub'
@@ -321,8 +321,8 @@ EOM
 function configurehibernate(){
     read -r -d '' prompt << EOM
 ┌──────────────────────────
-│ ⚠️ hi. this program will configure your system for hibernation now. the sudo password will be 
-│   asked for actions on system files. changed system files will be saved in backup copies. 
+│ ⚠️ hi. this program will configure your system for hibernation now. sudo password will be asked
+│   for actions on system files. changed system files will be backuped up. 
 │   do want to continue? (yes/no)
 EOM
     while true; do
