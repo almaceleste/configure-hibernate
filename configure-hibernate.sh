@@ -4,7 +4,7 @@
 # GNU Affero GPL 3.0 (ɔ) 2020 almaceleste
 
 readonly scriptname='configure-hibernate'
-readonly version=0.1.1
+readonly version=0.1.2
 
 readonly fstab='/etc/fstab'
 readonly grub='/etc/default/grub'
@@ -358,6 +358,17 @@ EOM
 # calculate some variables
 suffix=$(date +%Y%m%d%H%M)
 swap=$(getswap)
+
+# check if the system has swap partition
+if [ -z $swap ]; then
+    echo '┌──────────────────────────'
+    echo '│ ⚠️ sorry. your system does not has a swap partition. this utility does not support'
+    echo '│   systems without a swap partition. please, create a swap partition and'
+    echo '│   go back to configure hibernation'
+    echo '│   '
+    echo '│   good bye 👋'
+    exit 126
+fi
 
 # parse arguments passed to the script
 declare -A args
