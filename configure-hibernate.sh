@@ -350,7 +350,8 @@ EOM
     sudo systemctl restart systemd-logind.service
 
     echo '┌──────────────────────────'
-    echo '│ ⚠️ all done. your system was configured for hibernation '$'\n'
+    echo '│ ⚠️ all done. your system was configured for hibernation'
+    echo '│   '
     echo '│   good bye 👋'
     echo '│   and may the force of hibernation be with you '
 }
