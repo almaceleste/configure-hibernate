@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # configures the system to support hibernate
-# GNU Affero GPL 3.0 (ɔ) 2020 almaceleste
+# GNU Affero GPL 3.0 (ɔ) 2020,2022 almaceleste
 
 readonly scriptname='configure-hibernate'
 readonly version=0.1.2
@@ -58,7 +58,7 @@ function version(){
     read -r -d '' message << EOM
 $scriptname v$version
 
-Copyleft (ɔ) 2020 almaceleste
+Copyleft (ɔ) 2020,2022 almaceleste
 License: GNU Affero GPL 3.0 <https://gnu.org/licenses/agpl-3.0.html>.
 This is free software: you are free to change and redistribute it under the same license.
 There is NO WARRANTY, to the extent permitted by law.
