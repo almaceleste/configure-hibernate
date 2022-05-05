@@ -18,20 +18,20 @@ function help(){
 usage:  $scriptname.sh [options]
 configures the system to support hibernate. asks sudo privileges to change system files.
 
-all options may be absent. use it only if you know what you do and want to get some specific 
-result. if the option is absent, it will be calculated automatically.  
+all options may be absent. use it only if you know what you do and want to get some specific
+result. if the option is absent, it will be calculated automatically.
 
 options:
     --help              show this help and exit
-    --unset-recordfail  (single option) create a service to unset grub recordfail and get the 
-                        grub boot menu will not appear on boot after hibernation. this option 
-                        is necessary only if your system is already configured for hibernation, 
-                        but you found out that the grub boot menu appear at boot time after 
+    --unset-recordfail  (single option) create a service to unset grub recordfail and get the
+                        grub boot menu will not appear on boot after hibernation. this option
+                        is necessary only if your system is already configured for hibernation,
+                        but you found out that the grub boot menu appear at boot time after
                         hibernation, and you want to disable it
-    --polkit=path.pkla  path to the polkit .pkla file for configuration, e.g. 
+    --polkit=path.pkla  path to the polkit .pkla file for configuration, e.g.
                         /etc/polkit-1/localauthority/50-local.d/org.freedesktop.hibernate.pkla
     --suffix=something  suffix for backup files. if absent, the datetime stamp will be used
-    --swap=identifier   identifier of the swap partition, something like UUID=84a9...b17 or 
+    --swap=identifier   identifier of the swap partition, something like UUID=84a9...b17 or
                         /dev/nvme0n1p2
     --test              test your system for hibernation compatibility
     --version           show version info and exit
@@ -242,7 +242,7 @@ function setpolicy(){
             # read policykit file and prepare it to read policy entries from it
             done <<< $(sudo awk 'BEGIN {RS=""; FS="\n"} {print $0; print "|"}' $polkit)
             if [ $changed ]; then
-                # create backup of the policykit file 
+                # create backup of the policykit file
                 sudo mv $polkit $polkit.$suffix
                 # write previously saved policy entries to the file
                 for item in "${policies[@]}"; do
@@ -277,7 +277,7 @@ function setrecordfail(){
     read -r -d '' prompt << EOM
 ┌──────────────────────────
 │ ⚠️ do you want to create a service that will unset grub recordfail option when the computer
-│   goes into hibernate mode (this prevents the grub boot menu from appearing on boot after 
+│   goes into hibernate mode (this prevents the grub boot menu from appearing on boot after
 │   hibernation)? (yes/no)
 EOM
     while true; do
@@ -322,7 +322,7 @@ function configurehibernate(){
     read -r -d '' prompt << EOM
 ┌──────────────────────────
 │ ⚠️ hi. this program will configure your system for hibernation now. sudo password will be asked
-│   for actions on system files. changed system files will be backuped up. 
+│   for actions on system files. changed system files will be backuped up.
 │   do want to continue? (yes/no)
 EOM
     while true; do
@@ -374,7 +374,7 @@ case $@ in
 esac
 for key in ${!args[@]}; do
     case $key in
-        --help) 
+        --help)
             help
             exit;;
         --polkit)
@@ -398,7 +398,7 @@ for key in ${!args[@]}; do
         --version)
             version
             exit;;
-        *) 
+        *)
             echo "┌──────────────────────────"
             echo "│ ⚠️ $key is not a supported option"$'\n'
             help
